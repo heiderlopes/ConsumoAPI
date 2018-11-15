@@ -14,10 +14,13 @@ class ListaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_lista)
 
         rvPokemons.adapter = ListaAdapter(listOf(
-                Pokemon("Charmander", Sprites("")),
-                Pokemon("Squirtle", Sprites("")),
-                Pokemon("Bulbassaur", Sprites(""))
-        ),this, {})
+                Pokemon("Charmander",
+                        Sprites("https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png")),
+                Pokemon("Squirtle",
+                        Sprites("https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png")),
+                Pokemon("Bulbassaur",
+                        Sprites("https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"))
+        ), this, {})
         rvPokemons.layoutManager = LinearLayoutManager(this)
 
     }

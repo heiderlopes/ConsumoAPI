@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.heiderlopes.consumoapi.model.Pokemon
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_search.view.*
 
 class ListaAdapter(
@@ -39,6 +40,11 @@ class ListaAdapter(
                      listener: (Pokemon) -> Unit) = with(itemView) {
 
             tvPokemon.text = pokemon.name
+            Picasso.get()
+                    .load(pokemon?.sprites?.frontDefault)
+                    .placeholder(R.drawable.searching)
+                    .error(R.drawable.notfound)
+                    .into(ivPokemon)
             setOnClickListener { listener(pokemon) }
 
         }
